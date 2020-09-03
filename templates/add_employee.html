@@ -1,0 +1,97 @@
+<html>
+<head>
+    <title>Adding Employees</title>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script>
+function validateForm() {
+  var x = document.forms["myForm"]["fname"].value;
+  if (x == "" || x == null) {
+    alert("Name must be filled out");
+    return false;
+  }
+}
+</script>
+</head>
+<style>
+    input[name]{
+        margin-top: -10px;
+    }
+    <style>
+    input[name]{
+        margin-top: 10px;
+    }
+    input[value]{
+        margin-top: 0px;
+    }
+    form{
+        border: 2px grey solid;
+        padding: 10px;
+        border-radius: 30px;
+        box-shadow: 0 0 5px blue,0 0 10px red;
+    {
+
+
+</style>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="offset-md-3 col-md-6">
+            <h3 class="text-center">Add Employee Data Here</h3>
+            <form name="myForm" method="POST" action="{% url 'save_data' %}" onsubmit="return validateForm()" method="post" required>
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-md-6">
+                        <label>Enter Employee First Name:</label>
+                        <input type="text"name="fname"class="form-control">
+                    </div>
+                    <div class="col-md-6">
+                        <label>Enter Employee Last Name:</label>
+                        <input type="text" name="lname" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label>Enter Employee Contact Number:</label>
+                        <input type="number"name="mobile"class="form-control">
+                    </div>
+                    <div class="col-md-6">
+                        <label>Enter Employee Email ID:</label>
+                        <input type="email"name="email"class="form-control">
+                    </div>
+                    </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label>Enter Employee Salary:</label>
+                        <input type="number"name="salary"class="form-control">
+                    </div>
+                    <div class="col-md-6">
+                        <label>Enter Employee Experince:</label>
+                        <input type="text"name="exp"class="form-control">
+                    </div>
+                    </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label>Enter Employee Locaton:</label>
+                        <input type="text" name="loc" class="form-control">
+                    </div>
+                    <div class="col-md-6">
+                        <label>Enter Employee Company:</label>
+                        <input type="text"name="company"class="form-control">
+                    </div>
+                    </div>
+                <center>
+                    <input type="submit"value="Add"class="btn btn-success">
+                    <input type="reset"value="clear"class="btn btn-danger">
+                </center>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
